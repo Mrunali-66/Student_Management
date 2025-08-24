@@ -1,0 +1,179 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #2c3e50;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Main container */
+.student-management-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.header h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* Stats bar */
+.stats-bar {
+  margin: 20px 0;
+  padding: 12px;
+  background: #ecf6ff;
+  color: #007bff;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Section headings */
+h3 {
+  margin: 30px 0 15px;
+  font-size: 1.4rem;
+  color: #34495e;
+  border-left: 5px solid #3498db;
+  padding-left: 12px;
+}
+
+/* Student grid */
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.student-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.student-info {
+  margin-bottom: 12px;
+}
+
+.info-item {
+  margin: 6px 0;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.student-name {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.student-email {
+  color: #3498db;
+}
+
+/* Buttons */
+button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-danger {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #e84141;
+}
+
+/* Add Student form */
+.form-container {
+  background: #f8f9fb;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e1e8ed;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
+  outline: none;
+}
+
+.btn-submit {
+  background: #27ae60;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px;
+  width: 100%;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: #219150;
+}
+
+.btn-submit:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Empty state */
+.empty-list {
+  text-align: center;
+  padding: 40px 20px;
+  color: #95a5a6;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

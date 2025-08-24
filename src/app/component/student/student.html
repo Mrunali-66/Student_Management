@@ -1,0 +1,80 @@
+<div class="student-management-container">
+  <div class="main-content">
+    <div class="header">
+      <h2>Student Management System</h2>
+      <p class="header-subtitle">Manage your students efficiently</p>
+    </div>
+    
+    <div class="stats-bar">
+      <span>Total Students: {{ students.length }}</span>
+
+    </div>
+    
+    <div class="content-section">
+      <h3>Students Directory</h3>
+      <ul class="students-grid">
+        <li *ngFor="let student of students" class="fade-in">
+          <div class="student-card">
+            <div class="student-info">
+              <div class="info-item">
+                <span class="info-label">Name: </span>
+                <span class="info-value student-name">{{ student.name }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Age: </span>
+                <span class="info-value">{{ student.age }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Email: </span>
+                <span class="info-value student-email">{{ student.email }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Branch: </span>
+                <span class="info-value">{{ student.branch }}</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Year: </span>
+                <span class="info-value">{{ student.year }}</span>
+              </div>
+            </div>
+            <button class="btn btn-danger" (click)="deleteStudent(student._id)">
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <div class="content-section">
+      <h3>Add New Student</h3>
+      <div class="form-container">
+        <form (ngSubmit)="addStudent()">
+          <div class="form-grid">
+            <div class="form-group">
+              <input class="form-input" type="text" placeholder="Full Name" [(ngModel)]="newStudent.name" name="name" required />
+            </div>
+            <div class="form-group">
+              <input class="form-input" type="number" placeholder="Age" [(ngModel)]="newStudent.age" name="age" />
+            </div>
+            <div class="form-group">
+              <input class="form-input" type="email" placeholder="Email Address" [(ngModel)]="newStudent.email" name="email" required />
+            </div>
+            <div class="form-group">
+              <input class="form-input" type="text" placeholder="Branch/Department" [(ngModel)]="newStudent.branch" name="branch" />
+            </div>
+            <div class="form-group">
+              <input class="form-input" type="text" placeholder="Academic Year" [(ngModel)]="newStudent.year" name="year" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-submit" [disabled]="!newStudent.name || !newStudent.email">
+              Add Student
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
